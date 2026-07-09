@@ -33,7 +33,7 @@ wiki_tool = FunctionTool(func=get_historical_events)
 
 date_parser_agent = LlmAgent(
     name="date_parser",
-    model="gemini-2.5-flash",
+    model="gemini-2.5-flash-lite",
     description="Extracts a month and day from natural language input.",
     instruction="""
 You are a date extraction specialist.
@@ -52,7 +52,7 @@ Respond with ONLY a JSON object. No extra words, no markdown. Examples:
 
 wiki_fetcher_agent = LlmAgent(
     name="wiki_fetcher",
-    model="gemini-2.5-flash",
+    model="gemini-2.5-flash-lite",
     description="Fetches historical events from Wikipedia for a given date.",
     instruction="""
 You are a data retrieval agent.
@@ -73,7 +73,7 @@ Once the tool returns, output the raw JSON results exactly as returned.
 
 narrator_agent = LlmAgent(
     name="narrator",
-    model="gemini-2.5-flash",
+    model="gemini-2.5-flash-lite",
     description="Formats events or greets the user if no date was given.",
     instruction="""
 You are Chronicle, a friendly history guide.
